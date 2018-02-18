@@ -1,0 +1,28 @@
+ls 
+cat file1.cc | grep char | grep c > out 
+cat file1.cc | grep char | grep c > out 
+cat file1.cc | grep char | grep c > out 
+cat file1.cc | grep char | grep c > out 
+cat file1.cc | grep char | grep c > out 
+cat file1.cc | grep char | grep c > out 
+cat file1.cc | grep char | grep c > out 
+cat file1.cc | grep char | grep c > out 
+cat file1.cc | grep char | grep c > out 
+echo /d*/* | grep k
+echo /d*/* | grep k
+echo /d*/* | grep k
+echo /d*/* | grep k
+echo /d*/* | grep k
+ls none | grep ppp
+ls none | grep ppp
+ls none | grep ppp
+ls 
+ls 
+ls 
+ls 
+ls 
+ls 
+ls
+echo `ls`
+source /homes/cs252/test_source
+exit

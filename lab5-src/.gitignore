@@ -1,0 +1,11 @@
+bin/
+build/
+.vscode/
+*.out*
+*.org*
+*.req
+*.cmp
+*.valgrind
+*.testall
+http-out
+*~ .*~ # emacs temp files

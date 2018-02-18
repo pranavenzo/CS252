@@ -1,0 +1,41 @@
+testall.sh [-e http_executable] [-h ip:port] [-v] [suitenum...]: Run every test in the given suitenums, or run all test suites if none are provided. If an http_executable is provided, that will be used instead of bin/http. If a different host is provided, suites 2, 4, and 6 (if being run) will run against the given host rather than against a new instance of the server started by testall.sh. If -v is provided, generated files will not be cleaned up, so you can inspect the output of every test. To clean up generated files, run `make test-clean`
+
+testone.sh testnum <args>: Runs test/test<testnum>.sh with the given args. Tests for each step require different arguments. Tests for steps 1, 3, and 5 should be run similar to `testone.sh 1-1 [-e http_executable] [-v]`, where both -e and -v are optional. Tests for steps 2, 4, and 6 should be run similar to `testone.sh 2-1 <host> <port> [-v]`, where host and port are required arguments that are the host and port of your server. The host will usually be 127.0.0.1, but if you are running your server on data but testing locally, you can provide data.cs.purdue.edu (or any other valid host that your server is running on). -v, as always, optional.
+
+1-1: Running the server with no options results in the correct config output
+1-2: Running the server with a variety of short options results in the correct config output
+1-3: Running the server with a variety of long options results in the correct config output
+1-4: Running the server with a bad option results in an error message
+
+2-0: We should be able to connect to your server
+2-1: GET /hello-world with no headers should succeed
+2-2: GET /hello-world with one header should succeed
+2-3: GET /hello-world with HTTP/1.1 and a header should succeed
+2-4: PUT /hello-world should return a 405 Method Not Allowed response
+2-5: GET hello-world should return a 400 Bad Request response
+2-6: Using HTTP/2.0 should return a 505 HTTP Version Not Supported response
+
+3-1: Checks -F/process-per-request mode by opening three connections to your server and checking how many processes there are.
+3-2: Checks -R/thread-per-request mode by opening three connections to your server and checking how many threads there are.
+3-3: Checks -P/pool-of-threads mode by ensuring that you have a constant number of threads open for a number of concurrent requests.
+
+4-1: GET /index.html should return static/index.html with the text/html content type
+4-2: GET /generic.html should return static/generic.html with the text/html content type
+4-3: GET /images/pic01.jpg should return static/images/pic01.jpg with the image/jpeg content type
+4-4: GET /images/../index.html should return static/index.html with the text/html content type
+4-5: GET /none/../index.html should return a 404 File Not Found response
+4-6: GET /../Makefile should return a 404 File Not Found response
+4-7: GET /../src/controller/../../static/index.html should return static/index.html with the text/html content type
+
+5-1: Checks for 0 definitely/indirectly lost bytes and no leaking file descriptors in linear mode while running the entirety of test suites 2, 4, and 6 (even if you have not done extra credit, it should not leak)
+5-2: Similar to 5-1, but for process-per-request (-F) mode
+5-3: Similar to 5-1, but for thread-per-request (-R) mode
+5-4: Similar to 5-1, but for pool-of-threads (-P) mode with 5 threads
+
+6-1: GET /script/echo.sh with two headers
+6-2: GET /script/echo.sh with three query parameters
+6-3: POST /script/echo.sh with a 3-key body and two headers
+6-4: POST /script/pizzy.py with a 3-key body
+6-5: POST /script/echo.sh with a 3-key body, three headers, and three query parameters
+6-6: POST /script/echo.sh with a bad Content-Type should return a 415 Unsupported Media Type response
+6-7: POST /script/pizza.py with a Content-Length of greater than 4096 should result in a 403 Forbidden response.

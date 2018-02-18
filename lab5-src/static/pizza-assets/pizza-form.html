@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get your pizza here!</title>
+    <link href="/pizza-assets/pizza-form.css" rel="stylesheet" />
+</head>
+<body>
+    <form method="POST">
+        <img id="pizza-img" src="/pizza-assets/pizza.jpg" alt="pizza"/>
+        <fieldset>
+            <legend>Your pizza:</legend>
+            <p>
+                <label for="size">
+                    <span>Size</span>
+                </label>
+                <select id="size" name="size">
+                    <option value="10">Small</option>
+                    <option value="12">Medium</option>
+                    <option value="14">Large</option>
+                </select>
+            </p>
+            <p>
+                <label for="kind">
+                    <span>Kind</span>
+                </label>
+                <select id="kind" name="kind">
+                    <option value="plain">Plain</option>
+                    <option value="pepperoni">Pepperoni</option>
+                    <option value="veggie">Veggie</option>
+                </select>
+            </p>
+            <p>
+                <label>
+                    Extra requests:
+                    <input type="text" name="extra-requests" />
+                </label>
+            </p>
+            <p>
+                <label>
+                    Who's it for?
+                    <input type="text" name="label" />
+                </label>
+            </p>
+            <input type="submit" value="Submit" />
+        </fieldset>
+    </form>
+</body>
+</html>
