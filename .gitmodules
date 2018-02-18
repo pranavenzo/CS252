@@ -1,6 +1,6 @@
 [submodule "lab1-src"]
 	path = lab1-src
-	url = /homes/panappin/cs252/lab1-src/
+	url = ./lab1-src/
 [submodule "lab2-src"]
 	path = lab2-src
 	url = /homes/panappin/cs252/lab2-src/
