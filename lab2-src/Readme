@@ -1,0 +1,9 @@
+This directory includes the following subdirectoris and files:
+1. ./fiz   includes source code for the FIZ interpreter and test files for FIZ
+   ./fiz/fiz.l      LEX file
+   ./fiz/fiz.y      YACC/Bison file
+   ./fiz/Makefile   
+   ./fiz/test1.y    Test file.  Within fiz interpreter, type import test1.y
+   ./fiz/test2.y    Test file.
+2. rfliz  is a binary for FLIZ interpreter, built on data.cs
+3. tf1.f to tf4.f are test files for FLIZ

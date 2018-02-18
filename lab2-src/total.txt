@@ -1,0 +1,4 @@
+fliz part4                          : 15  of 15 
+/homes/cs252/Spring2017/lab2-test/rfliz intlist : 3   of 3  
+/homes/cs252/Spring2017/lab2-test/rfliz reverse : 4   of 4  
+/homes/cs252/Spring2017/lab2-test/rfliz recreverse : 3   of 3  
